@@ -30,43 +30,43 @@ built from scratch. six districts. five years of daily data. two prediction syst
 &nbsp;
 
 ### ◈ live risk map
-![Live Risk Map](screenshots/map.png)
+![Live Risk Map](Screenshots/map.png)
 *district polygons colored by flood risk — click any district for full stats*
 
 &nbsp;
 
 ### ◈ flood analysis
-![Flood Analysis](screenshots/flood.png)
+![Flood Analysis](Screenshots/flood.png)
 *five years of high/moderate/low risk days broken down by district and month*
 
 &nbsp;
 
 ### ◈ rainfall trends
-![Rainfall Trends](screenshots/rainfall.png)
+![Rainfall Trends](Screenshots/rainfall.png)
 *daily NASA rainfall measurements — 2020 to 2024 — filterable by district*
 
 &nbsp;
 
 ### ◈ temperature & humidity
-![Temperature](screenshots/temperature.png)
+![Temperature](Screenshots/temperature.png)
 *district-level temperature trends with humidity correlation scatter*
 
 &nbsp;
 
 ### ◈ ml predictions
-![ML Predictions](screenshots/ml.png)
+![ML Predictions](Screenshots/ml.png)
 *random forest output — flood probability per district with confidence breakdown*
 
 &nbsp;
 
 ### ◈ drought monitor
-![Drought Monitor](screenshots/drought.png)
+![Drought Monitor](Screenshots/drought.png)
 *SPI index tracking + 6-month prophet forecast + monthly drought heatmap*
 
 &nbsp;
 
 ### ◈ district stats
-![District Stats](screenshots/stats.png)
+![District Stats](Screenshots/stats.png)
 *full summary table — all weather variables — 2020 to 2024*
 
 &nbsp;
