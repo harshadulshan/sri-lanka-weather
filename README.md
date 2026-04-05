@@ -1,163 +1,375 @@
+# ◈ SL WEATHER INTELLIGENCE
 
-# sri-lanka-weather
+> *Satellite-grade flood & drought prediction for Sri Lanka — built in R, powered by NASA.*
 
-![GitHub stars](https://img.shields.io/github/stars/YOUR_USERNAME/sri-lanka-weather?style=social)
-![GitHub forks](https://img.shields.io/github/forks/YOUR_USERNAME/sri-lanka-weather?style=social)
-![GitHub top language](https://img.shields.io/github/languages/top/YOUR_USERNAME/sri-lanka-weather)
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
+&nbsp;
 
-*(Replace `YOUR_USERNAME` in the badge URLs with your actual GitHub username for correct badge display.)*
-
----
-
-## 📝 Summary
-
-The `sri-lanka-weather` project is a powerful, real-time weather forecasting and emergency alert system specifically designed for Sri Lanka. It leverages cutting-edge technology, including actual NASA satellite data 🛰️, real-time Doppler radar processing 📡, and production-grade Machine Learning models 🤖, to provide highly accurate weather insights. The system offers live interactive maps 🗺️, sends crucial emergency alerts 🚨 to enhance public safety, and exposes its capabilities through a public REST API 🌐, addressing a critical need for advanced weather monitoring in Sri Lanka 🇱🇰.
+[![Live Demo](https://img.shields.io/badge/◈_LIVE_DEMO-388bfd?style=for-the-badge&logoColor=white)](https://srilanka-weather.shinyapps.io/sl-weather-intelligence/)
+[![R](https://img.shields.io/badge/Built_in_R-276DC3?style=for-the-badge&logo=r&logoColor=white)](https://www.r-project.org/)
+[![NASA](https://img.shields.io/badge/NASA_POWER_API-FC3D21?style=for-the-badge&logo=nasa&logoColor=white)](https://power.larc.nasa.gov/)
+[![Shiny](https://img.shields.io/badge/Shiny-deployed-3fb950?style=for-the-badge&logoColor=white)](https://shinyapps.io)
 
 ---
 
-## ✨ Features
+&nbsp;
 
-*   **Actual NASA Satellite Data Integration:** Incorporates genuine satellite data from NASA for comprehensive and accurate weather analysis.
-*   **Real-time Doppler Radar Processing:** Processes live Doppler radar feeds to detect precipitation, storm intensity, and wind patterns in real-time.
-*   **Production Machine Learning Models:** Utilizes robust, production-ready ML models for predictive analytics and enhanced forecasting accuracy.
-*   **Live Interactive Weather Maps:** Provides dynamic and interactive maps to visualize current weather conditions, forecasts, and alerts.
-*   **Real Emergency Alert System:** Capable of sending critical emergency alerts for severe weather events to relevant stakeholders and the public.
-*   **Public REST API:** Offers a well-documented RESTful API for developers to integrate weather data and alerts into their own applications.
-*   **Addresses Critical Sri Lankan Weather Needs:** Specifically tailored to solve real-world weather challenges and improve disaster preparedness in Sri Lanka.
+## what this actually is
 
----
+not a tutorial project. not a kaggle notebook. this is a functioning early-warning system that pulls real NASA satellite measurements, runs them through a trained random forest model, and renders the output as a live dashboard — deployed, accessible, free to use.
 
-## 🛠️ Tech Stack
+built from scratch. six districts. five years of daily data. two prediction systems. one R file.
 
-While the primary *frontend* or documentation is in HTML, the underlying system is complex and likely involves:
-
-*   **Frontend:**
-    *   `HTML`
-    *   `CSS` (e.g., Tailwind CSS, Bootstrap)
-    *   `JavaScript` (e.g., React, Vue.js, Angular, or vanilla JS for interactive maps)
-*   **Backend:**
-    *   [Backend Language/Framework] (e.g., Python with Flask/Django, Node.js with Express, Go, Java with Spring Boot)
-*   **Machine Learning:**
-    *   [ML Framework] (e.g., TensorFlow, PyTorch, scikit-learn)
-*   **Data Processing & Storage:**
-    *   [Database] (e.g., PostgreSQL, MongoDB, Redis)
-    *   [Data Streaming/Processing] (e.g., Apache Kafka, Apache Flink, geospatial libraries like GDAL)
-*   **Mapping Libraries:**
-    *   [Mapping Library] (e.g., Leaflet, Mapbox GL JS, OpenLayers)
-*   **Cloud Infrastructure:**
-    *   [Cloud Provider] (e.g., AWS, Google Cloud Platform, Azure)
-*   **Containerization:**
-    *   `Docker`, `Kubernetes` (for deployment and orchestration)
-
-*(Please expand this section with the actual technologies used in your project's backend, ML, and data processing layers.)*
+&nbsp;
 
 ---
 
-## 🚀 Installation Steps
+&nbsp;
 
-To get `sri-lanka-weather` up and running on your local machine, follow these steps:
+## the screenshots
 
-1.  **Clone the Repository:**
-    ```bash
-    git clone https://github.com/YOUR_USERNAME/sri-lanka-weather.git
-    cd sri-lanka-weather
-    ```
-    *(Remember to replace `YOUR_USERNAME` with your actual GitHub username.)*
+&nbsp;
 
-2.  **Install Dependencies:**
-    Depending on the specific tech stack, you'll need to install backend, frontend, and ML dependencies.
-    *   **Frontend (HTML/JS/CSS):**
-        If there's a build step (e.g., using `npm` or `yarn`):
-        ```bash
-        npm install # or yarn install
-        ```
-    *   **Backend:**
-        If using Python:
-        ```bash
-        pip install -r requirements.txt
-        ```
-        If using Node.js:
-        ```bash
-        npm install # or yarn install
-        ```
-        *(Adjust commands based on your actual backend language and package manager.)*
+### ◈ live risk map
+![Live Risk Map](screenshots/map.png)
+*district polygons colored by flood risk — click any district for full stats*
 
-3.  **Environment Configuration:**
-    Create a `.env` file in the root directory and add your environment variables (e.g., API keys for NASA data, database connection strings, ML model paths).
-    ```
-    # Example .env content
-    NASA_API_KEY=YOUR_NASA_API_KEY
-    DATABASE_URL=postgres://user:password@host:port/database
-    ML_MODEL_PATH=/app/models/weather_predictor.pkl
-    ```
-    *(Refer to a `CONTRIBUTING.md` or `DEVELOPMENT.md` if available for specific environment variables.)*
+&nbsp;
 
-4.  **Database Setup (if applicable):**
-    If your project uses a database, you might need to run migrations:
-    ```bash
-    # Example for Python/Django
-    python manage.py migrate
-    ```
-    *(Adjust commands based on your database and ORM.)*
+### ◈ flood analysis
+![Flood Analysis](screenshots/flood.png)
+*five years of high/moderate/low risk days broken down by district and month*
 
-5.  **Start the Application:**
-    *   **Frontend:**
-        If it's a static HTML site, you can simply open `index.html` in your browser.
-        If it requires a development server:
-        ```bash
-        npm start # or yarn dev
-        ```
-    *   **Backend:**
-        ```bash
-        # Example for Python/Flask
-        flask run
+&nbsp;
 
-        # Example for Node.js/Express
-        npm start # or node server.js
-        ```
-    *(Adjust commands based on your specific setup.)*
+### ◈ rainfall trends
+![Rainfall Trends](screenshots/rainfall.png)
+*daily NASA rainfall measurements — 2020 to 2024 — filterable by district*
+
+&nbsp;
+
+### ◈ temperature & humidity
+![Temperature](screenshots/temperature.png)
+*district-level temperature trends with humidity correlation scatter*
+
+&nbsp;
+
+### ◈ ml predictions
+![ML Predictions](screenshots/ml.png)
+*random forest output — flood probability per district with confidence breakdown*
+
+&nbsp;
+
+### ◈ drought monitor
+![Drought Monitor](screenshots/drought.png)
+*SPI index tracking + 6-month prophet forecast + monthly drought heatmap*
+
+&nbsp;
+
+### ◈ district stats
+![District Stats](screenshots/stats.png)
+*full summary table — all weather variables — 2020 to 2024*
+
+&nbsp;
 
 ---
 
-## 🚦 Usage Instructions
+&nbsp;
 
-Once the application is running, you can:
+## how it works
 
-1.  **Access the Web Interface:**
-    Open your web browser and navigate to `http://localhost:[PORT]` (e.g., `http://localhost:3000` or `http://localhost:5000`) to view the live interactive maps and current weather data for Sri Lanka.
+```
+NASA POWER API  ──►  daily weather pull  ──►  feature engineering
+                                                      │
+                                                      ▼
+                                            random forest model
+                                            (500 trees, 9 features)
+                                                      │
+                                                      ▼
+                                     flood risk: MINIMAL / LOW / MODERATE / HIGH
+                                                      │
+                              ┌───────────────────────┼───────────────────────┐
+                              ▼                       ▼                       ▼
+                         live map              district alerts          prophet forecast
+                     (leaflet polygons)      (probability table)     (6-month SPI trend)
+```
 
-2.  **Utilize the Public REST API:**
-    The API provides various endpoints to fetch weather data, forecasts, and alert information.
-    *   **Base URL:** `http://localhost:[API_PORT]/api/v1` (adjust `API_PORT` as needed)
-    *   **Example Endpoints:**
-        *   `GET /api/v1/current-weather?location=Colombo`
-        *   `GET /api/v1/forecast?location=Kandy&days=5`
-        *   `GET /api/v1/alerts`
-    *(Refer to the API documentation (if available, link here) for detailed endpoint descriptions, request parameters, and response formats.)*
-
-3.  **Receive Emergency Alerts:**
-    The system is designed to send real-time emergency alerts. Depending on its configuration, these alerts might be disseminated via [SMS/Email/Push Notifications/etc.]. (Provide details on how users can subscribe or receive alerts).
-
----
-
-## 🤝 Contributing
-
-We welcome contributions to the `sri-lanka-weather` project! If you're interested in helping, please follow these steps:
-
-1.  **Fork the repository.**
-2.  **Create a new branch:** `git checkout -b feature/your-feature-name`
-3.  **Make your changes.**
-4.  **Commit your changes:** `git commit -m 'feat: Add new feature X'`
-5.  **Push to your branch:** `git push origin feature/your-feature-name`
-6.  **Open a Pull Request** with a clear description of your changes.
-
-Please ensure your code adheres to the project's coding standards and includes appropriate tests. For major changes, please open an issue first to discuss what you would like to change.
+&nbsp;
 
 ---
 
-## 📄 License
+&nbsp;
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## system architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        DATA LAYER                               │
+│                                                                 │
+│   ┌─────────────┐   ┌─────────────┐   ┌─────────────────────┐  │
+│   │ NASA POWER  │   │  GADM v4.1  │   │   Computed SPI      │  │
+│   │   API       │   │  Boundaries │   │   (monthly)         │  │
+│   │  (daily)    │   │  (static)   │   │                     │  │
+│   └──────┬──────┘   └──────┬──────┘   └──────────┬──────────┘  │
+└──────────┼────────────────┼──────────────────────┼─────────────┘
+           │                │                      │
+           ▼                ▼                      ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    PROCESSING LAYER  (R)                        │
+│                                                                 │
+│   rainfall · temp · humidity · wind · rain_3day · rain_7day    │
+│   rain_30day · rain_spike · humidity_spike                      │
+│                                                                 │
+│   ┌──────────────────┐        ┌──────────────────────────────┐  │
+│   │  Random Forest   │        │     Meta Prophet             │  │
+│   │  500 trees       │        │     + monsoon seasonality    │  │
+│   │  4 risk classes  │        │     6-month SPI forecast     │  │
+│   └────────┬─────────┘        └──────────────┬───────────────┘  │
+└────────────┼──────────────────────────────────┼─────────────────┘
+             │                                  │
+             ▼                                  ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                     OUTPUT LAYER  (Shiny)                       │
+│                                                                 │
+│   🗺️ Live Map    🌊 Flood    🌧️ Rainfall    🌡️ Temp             │
+│   📊 Stats       🤖 ML       ☀️ Drought                         │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+&nbsp;
 
 ---
+
+&nbsp;
+
+## languages & tools
+
+```
+Language breakdown:
+───────────────────────────────────────────────────────
+R               ████████████████████░░░░░   91.2%
+CSS             ████░░░░░░░░░░░░░░░░░░░░░    5.8%
+HTML            ██░░░░░░░░░░░░░░░░░░░░░░░    3.0%
+───────────────────────────────────────────────────────
+```
+
+&nbsp;
+
+| category | tools |
+|----------|-------|
+| **dashboard** | Shiny · shinydashboard |
+| **maps** | leaflet · sf · GADM |
+| **charts** | plotly · ggplot2 |
+| **ml model** | randomForest · caret |
+| **forecasting** | prophet (Meta) |
+| **data pipeline** | nasapower · tidyverse · lubridate · zoo |
+| **deployment** | rsconnect · shinyapps.io |
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## dashboard at a glance
+
+```
+┌───────────────────────────────────────────────────────────────────┐
+│  ◈ SL WEATHER INTEL                  [ 14:32:05 · 04 Apr 2026 ]  │
+├──────────────┬────────────────────────────────────────────────────┤
+│              │  ┌──────────┐  ┌──────────┐  ┌──────────┐         │
+│ 🗺️  Live Map │  │ 🔴 HIGH  │  │ 🟠 MOD   │  │ 💧 Rain  │         │
+│ 🌊  Flood   │  │  23 days │  │ 178 days │  │  6.6mm   │         │
+│ 🌧️  Rainfall │  └──────────┘  └──────────┘  └──────────┘         │
+│ 🌡️  Temp    │                                                     │
+│ 📊  Stats   │  ┌──────────────────────────┐  ┌─────────────────┐ │
+│ 🤖  ML      │  │                          │  │  ⚡ Alerts      │ │
+│ ☀️  Drought │  │    [ Sri Lanka Map ]     │  │                 │ │
+│             │  │    colored polygons      │  │  Ratnapura  🟠  │ │
+│ ─────────── │  │    click for detail      │  │  Kandy      🟠  │ │
+│ 📍 District │  │                          │  │  Colombo    🟢  │ │
+│ 📅 Range    │  └──────────────────────────┘  └─────────────────┘ │
+└─────────────┴────────────────────────────────────────────────────┘
+```
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## the model
+
+**algorithm** — Random Forest
+**trees** — 500 · **features** — 9 · **classes** — 4
+
+```
+feature importance:
+────────────────────────────────────────────────────────
+🥇 rain_spike      ████████████████░░░░   top predictor
+🥈 rain_7day       █████████████░░░░░░░   sustained rain
+🥉 humidity        ███████████░░░░░░░░░   atmospheric moisture
+   rainfall        █████████░░░░░░░░░░░   raw daily mm
+   rain_30day      ███████░░░░░░░░░░░░░   baseline context
+   rain_3day       █████░░░░░░░░░░░░░░░   short term trend
+   humidity_spike  ████░░░░░░░░░░░░░░░░   anomaly detection
+   temp            ███░░░░░░░░░░░░░░░░░   seasonal context
+   wind            ██░░░░░░░░░░░░░░░░░░   atmospheric state
+────────────────────────────────────────────────────────
+```
+
+**drought model** — Meta Prophet + SW/NE monsoon seasonality regressors
+**forecast horizon** — 6 months
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## what the SPI means
+
+```
+SPI ≥  0.0   ●  NORMAL       no concern
+SPI < -0.5   ●  MILD         watch closely
+SPI < -1.0   ●  MODERATE  ── ── orange threshold on chart
+SPI < -1.5   ●  SEVERE    ── ── red threshold on chart
+SPI < -2.0   ●  EXTREME      immediate concern
+```
+
+*global meteorological standard used by WMO and national met agencies worldwide*
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## districts covered
+
+```
+                    ┌─────────┐
+                    │  Jaffna │  ← dry zone north
+                    └────┬────┘
+                         │
+         ┌───────────────┼────────────────┐
+         │               │                │
+    ┌────┴────┐      ┌───┴────┐      ┌────┴────┐
+    │ Colombo │      │  Kandy │      │ Badulla │
+    │ (west)  │      │ (hill) │      │ (uva)   │
+    └────┬────┘      └───┬────┘      └─────────┘
+         │               │
+    ┌────┴────┐      ┌───┴──────┐
+    │  Galle  │      │Ratnapura │  ← wettest district
+    │ (south) │      │ (sabara) │
+    └─────────┘      └──────────┘
+```
+
+*6 of 25 districts — spanning wet zone · dry zone · hill country · north*
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## run it yourself
+
+```r
+# 1. install dependencies
+install.packages(c(
+  "shiny", "shinydashboard", "tidyverse",
+  "leaflet", "plotly", "DT", "sf",
+  "randomForest", "caret", "prophet",
+  "nasapower", "lubridate", "zoo"
+))
+
+# 2. download NASA data (~3 min)
+source("R/01_get_data.R")
+
+# 3. clean and engineer features
+source("R/03_clean_data.R")
+
+# 4. train models
+source("R/05_flood_model.R")
+source("R/07_drought_model.R")
+
+# 5. launch dashboard
+shiny::runApp("R/06_dashboard.R")
+```
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## file structure
+
+```
+sri-lanka-weather/
+│
+├── R/
+│   ├── 01_get_data.R          NASA POWER API download
+│   ├── 02_check_data.R        data validation
+│   ├── 03_clean_data.R        feature engineering + SPI
+│   ├── 04_map.R               boundary processing
+│   ├── 05_flood_model.R       random forest training
+│   ├── 06_dashboard.R         shiny app — main file
+│   ├── 07_drought_model.R     prophet forecasting
+│   └── data/                  processed .rds files
+│
+├── screenshots/               dashboard screenshots
+└── README.md
+```
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## potential extensions
+
+```
+near term
+  □  all 25 Sri Lanka districts
+  □  automated daily retraining via GitHub Actions
+  □  REST API via plumber for DMC integration
+
+medium term
+  □  real doppler radar integration (DMC data)
+  □  Indian Ocean SST anomaly as ML feature
+  □  landslide risk model — Kandy · Badulla · Ratnapura
+
+long term
+  □  SMS alert system via Dialog/Mobitel API
+  □  mobile app wrapper
+  □  partnership with DMC Sri Lanka
+```
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## contact
+
+built in Negombo, Sri Lanka 🇱🇰
+
+&nbsp;
+
+[![LinkedIn](https://img.shields.io/badge/Harsha_Kaldera-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/harsha-kaldera/)
+[![Gmail](https://img.shields.io/badge/harshakaldera540@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:harshakaldera540@gmail.com)
+
+&nbsp;
+
+if you work at DMC, a university, or an NGO and want to talk about this — open an issue or reach out directly.
+
+&nbsp;
+
+---
+
+&nbsp;
+
+*NASA data via POWER API (power.larc.nasa.gov) · boundaries from GADM (gadm.org) · not affiliated with NASA or DMC Sri Lanka*
