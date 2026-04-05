@@ -1,0 +1,10 @@
+name: sl-weather-intelligence
+title:
+username: srilanka-weather
+account: srilanka-weather
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 17055932
+bundleId: 11803440
+url: https://srilanka-weather.shinyapps.io/sl-weather-intelligence/
+version: 1
